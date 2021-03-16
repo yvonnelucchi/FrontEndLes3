@@ -2,13 +2,19 @@
     --menu-bar-width: 60px;
     --menu-bar-height: 10px;
 }
-
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    width: 150px;
+    background-color: cornflowerblue;
+}
 #menu {
     background-color: #D84282;
     position: relative;
     width: var(--menu-bar-width);
     height: var(--menu-bar-height);
-    margin: 100px;
 }
 
 #menu::before,
@@ -20,7 +26,6 @@
     height: var(--menu-bar-height);
     position: absolute;
 }
-
 #menu::before {
     left: 0;
     top: -20px;
@@ -30,3 +35,50 @@
     left: 0;
     top: 20px;
 }
+
+#container:hover #menu {
+    background-color: transparent;
+    position: relative;
+    width: var(--menu-bar-width);
+    height: var(--menu-bar-height);
+}
+
+
+#container:hover #menu::before {
+    background-color: #D84282;
+    top: 0px;
+    transform: rotate(45deg);
+}
+
+
+
+#container:hover #menu::after {
+    transform: rotate(-45deg);
+    top: 0px;
+    background-color: #D84282;
+}
+
+/*  -middelste element verdwijnt
+    -2 elementen kruizen elkaar
+    -animatie
+    -hover
+
+ #menu:hover {
+       background-color: transparent;
+       position: relative;
+       width: var(--menu-bar-width);
+       height: var(--menu-bar-height);
+   }
+
+#menu:hover::before {
+    background-color: #D84282;
+    top: 0px;
+    transform: rotate(45deg);
+}
+
+#menu:hover::after {
+    transform: rotate(-45deg);
+    top:0px;
+    background-color: #D84282;
+}
+*/
